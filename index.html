@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sharing Platform - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">WEEKEND</div>
+<nav>
+  <ul class="nav-menu">
+    <li class="nav-item active"><a href="#">Home</a></li>
+    <li class="nav-item"><a href="#">About us</a></li>
+    <li class="nav-item"><a href="#">Courses</a></li>
+    <li class="nav-item"><a href="#">Contact us</a></li>
+    <li class="nav-item"><a href="#">FAQ's</a></li>
+    <li class="nav-item"><a href="login.html">Sign in</a></li>
+    <div class="nav-indicator"></div>
+  </ul>
+</nav>
+    <div class="buttons">
+      <button class="btn btn-primary">Create free account</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Up Your Skills<br>To Advance Your Career Path</h1>
+      <p>Learn UI-UX Design skills with weekend UX. The latest online learning system and material that help your knowledge growing.</p>
+      <div class="hero-actions">
+        <button class="btn btn-outline">Get Started</button>
+        <button class="btn btn-primary">Get free trial</button>
+      </div>
+    <div class="features">
+        <div class="feature-item">🎤 Public Speaking</div>
+        <div class="feature-item">🎯 Career-Oriented</div>
+        <div class="feature-item">💡 Creative Thinking</div>
+    </div>
+
+    </div>
+    <div class="hero-image">
+      <img src="img/home-img.png" alt="Hero Image">
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>WEEKEND</h2>
+      <p>Empowering people through skill sharing and learning together.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WEEKEND. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  const $menu = $(".nav-menu");
+  const $items = $(".nav-item");
+  const $indicator = $(".nav-indicator");
+
+  function moveIndicator($el) {
+    const left = $el.position().left;
+    const width = $el.outerWidth();
+    $indicator.css({
+      left: left + "px",
+      width: width + "px"
+    });
+  }
+
+  $(document).ready(function () {
+    const $activeItem = $(".nav-item.active");
+    moveIndicator($activeItem);
+  });
+
+  $items.on("mouseenter", function () {
+    moveIndicator($(this));
+  });
+
+  $menu.on("mouseleave", function () {
+    moveIndicator($(".nav-item.active"));
+  });
+</script>
+
+
+</body>
+</html>

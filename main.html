@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - WEEKEND</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">WEEKEND</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.htmlP">Home</a></li>
+        <li class="nav-item"><a href="#">My Skills</a></li>
+        <li class="nav-item"><a href="#">Bookings</a></li>
+        <li class="nav-item"><a href="#">Reviews</a></li>
+        <li class="nav-item"><a href="#">Profile</a></li>
+        <li class="nav-item"><a href="logout.php">Logout</a></li>
+        <div class="nav-indicator"></div>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Dashboard Content -->
+  <div class="main-content">
+
+    <!-- Welcome User -->
+    <section class="welcome-box">
+      <h1>Hello, Elakiya! 👋</h1>
+      <p>Welcome back! Continue learning, sharing and booking skills with peers.</p>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <a href="#" class="btn">Book a Session</a>
+      <a href="#" class="btn alt">Add a Skill</a>
+      <a href="#" class="btn">Update Profile</a>
+    </section>
+
+    <!-- Enrolled Courses -->
+    <section class="dashboard-section">
+      <h2>📚 Your Enrolled Skills</h2>
+      <div class="card-list">
+        <div class="card">
+          <h3>Full Stack Development</h3>
+          <p>Instructor: Kavin | Next session: July 8</p>
+        </div>
+        <div class="card">
+          <h3>Cyber Security Networking</h3>
+          <p>Instructor: Aisha | Next session: July 10</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Your Offered Skills -->
+    <section class="dashboard-section">
+      <h2>🧠 Skills You Offer</h2>
+      <div class="card-list">
+        <div class="card">
+          <h3>Project Lead</h3>
+          <p>Booked: 3 times | Avg Rating: 4.8⭐</p>
+        </div>
+        <div class="card">
+          <h3>Presentation</h3>
+          <p>Booked: 7 times | Avg Rating: 4.3⭐</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Reviews -->
+    <section class="dashboard-section">
+      <h2>🌟 Latest Reviews</h2>
+      <div class="review-item">"Great session on career planning!" - Rahul</div>
+      <div class="review-item">"Loved the group activity ideas." - Sneha</div>
+    </section>
+  </div>
+</body>
+</html>

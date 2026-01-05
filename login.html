@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="styles/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ✅ Navbar -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">WEEKEND</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="#">About us</a></li>
+        <li class="nav-item"><a href="#">Courses</a></li>
+        <li class="nav-item"><a href="#">Contact us</a></li>
+        <li class="nav-item"><a href="#">FAQ's</a></li>
+        <div class="nav-indicator"></div>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ✅ Login Content -->
+  <div class="container">
+    <div class="image-side">
+      <img src="img/login-img.svg" alt="Login Illustration" />
+    </div>
+    <div class="form-side">
+      <form class="form-container" id="loginForm">
+        <h2>Login</h2>
+
+        <div class="form-group">
+          <label>Email <span class="error"></span></label>
+          <input type="email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <label>Password <span class="error"></span></label>
+          <input type="password" name="password" />
+        </div>
+
+        <button type="submit" class="btn-submit">Login</button>
+
+        <div class="login-link">Don't have an account? <a href="register.html">Register</a></div>
+
+        <div id="success-message" style="color: green; text-align: center; margin-top: 15px; display: none;">
+          Logged in successfully!
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ✅ Script for Form Validation -->
+  <script>
+    const form = document.getElementById('loginForm');
+    const fields = form.querySelectorAll('input');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let isValid = true;
+      successMessage.style.display = 'none';
+
+      fields.forEach(field => {
+        const label = field.parentElement.querySelector('.error');
+        if (field.value.trim() === '') {
+          label.textContent = ' (Required)';
+          isValid = false;
+        } else {
+          label.textContent = '';
+        }
+      });
+
+      if (isValid) {
+        successMessage.style.display = 'block';
+        // In real usage: submit form data via PHP or AJAX
+      }
+    });
+
+    fields.forEach(field => {
+      field.addEventListener('input', () => {
+        const label = field.parentElement.querySelector('.error');
+        if (field.value.trim() !== '') {
+          label.textContent = '';
+        }
+      });
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  const $menu = $(".nav-menu");
+  const $items = $(".nav-item");
+  const $indicator = $(".nav-indicator");
+
+  function moveIndicator($el) {
+    const left = $el.position().left;
+    const width = $el.outerWidth();
+    $indicator.css({
+      left: left + "px",
+      width: width + "px"
+    });
+  }
+
+  $(document).ready(function () {
+    const $activeItem = $(".nav-item.active");
+    moveIndicator($activeItem);
+  });
+
+  $items.on("mouseenter", function () {
+    moveIndicator($(this));
+  });
+
+  $menu.on("mouseleave", function () {
+    moveIndicator($(".nav-item.active"));
+  });
+</script>
+</body>
+</html>
